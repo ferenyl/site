@@ -2,10 +2,8 @@
 <html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>ferenyl.dev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ferenyl.dev</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,77 +19,133 @@
       rel="stylesheet"
     />
     <style>
+      /* Catppuccin Mocha */
+      :root {
+        --ctp-crust: #11111b;
+        --ctp-mantle: #181825;
+        --ctp-base: #1e1e2e;
+        --ctp-surface0: #313244;
+        --ctp-surface1: #45475a;
+        --ctp-overlay0: #6c7086;
+        --ctp-subtext0: #a6adc8;
+        --ctp-text: #cdd6f4;
+        --ctp-mauve: #cba6f7;
+        --ctp-lavender: #b4befe;
+        --ctp-blue: #89b4fa;
+        --ctp-peach: #fab387;
+        --ctp-yellow: #f9e2af;
+        --ctp-green: #a6e3a1;
+      }
       body {
-        padding-top: 1em;
+        background: var(--ctp-base);
+        color: var(--ctp-text);
         font-family: "CaskaydiaCove NF", monospace;
       }
-      #icons i {
-        font-size: 1.2rem;
+      a {
+        color: var(--ctp-blue);
+        text-decoration: none;
       }
+      a:hover {
+        color: var(--ctp-lavender);
+      }
+      .sidebar {
+        background: var(--ctp-mantle);
+        border-right: 1px solid var(--ctp-surface0);
+      }
+      @media (min-width: 768px) {
+        .sidebar {
+          position: sticky;
+          top: 0;
+          height: 100vh;
+        }
+      }
+      .avatar {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border: 3px solid var(--ctp-mauve);
+      }
+      .sidebar h1 {
+        color: var(--ctp-mauve);
+        font-size: 1.75rem;
+      }
+      .tagline {
+        color: var(--ctp-subtext0);
+        font-size: 0.9rem;
+      }
+      #icons i {
+        font-size: 1.3rem;
+        color: var(--ctp-overlay0);
+        transition: color 0.15s;
+      }
+      #icons i:hover {
+        color: var(--ctp-mauve);
+      }
+      .contact a {
+        display: block;
+        margin-bottom: 0.4rem;
+      }
+      h2 {
+        color: var(--ctp-mauve);
+        font-size: 1.1rem;
+        text-transform: lowercase;
+      }
+      h2::before {
+        content: "~/";
+        color: var(--ctp-overlay0);
+      }
+      .projects {
+        list-style: none;
+        padding: 0;
+      }
+      .project {
+        display: block;
+        padding: 1rem 1.25rem;
+        margin-bottom: 0.75rem;
+        background: var(--ctp-mantle);
+        border: 1px solid var(--ctp-surface0);
+        border-left: 3px solid var(--ctp-surface1);
+        border-radius: 0.5rem;
+        transition: border-color 0.15s, background 0.15s;
+      }
+      .project:hover {
+        background: var(--ctp-crust);
+        border-left-color: var(--ctp-mauve);
+      }
+      .project .name {
+        color: var(--ctp-blue);
+        font-weight: bold;
+      }
+      .project p {
+        color: var(--ctp-subtext0);
+        font-size: 0.9rem;
+        margin: 0.35rem 0 0;
+      }
+      .lang {
+        font-size: 0.75rem;
+        margin-left: 0.6rem;
+        padding: 0.1rem 0.5rem;
+        border-radius: 1rem;
+        background: var(--ctp-surface0);
+      }
+      .lang-dotnet { color: var(--ctp-mauve); }
+      .lang-rust { color: var(--ctp-peach); }
+      .lang-python { color: var(--ctp-yellow); }
+      .lang-ts { color: var(--ctp-blue); }
     </style>
   </head>
   <body>
-    <div class="container text-center">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col">
-          <h1>
-            <img
-              src="./images/me.jpg"
-              alt="Ferenyl Avatar"
-              class="img-fluid rounded-circle"
-              width="50"
-              height="50"
-            />Ferenyl.dev
-          </h1>
-
-          <p>Me backend developer. So me use bootstrap. And Arch btw!</p>
-          <h2>Projects</h2>
-          <h3>
-            <a href="https://github.com/ferenyl/SwedishTestSsn"
-              >SwedishTestSsn (.net)</a
-            >
-          </h3>
-          <p>
-            CLI tool for getting a swedish test ssn from the wedish tax agency
-            (skatteverket).
-          </p>
-          <h3>
-            <a href="https://github.com/ferenyl/swedish_test_ssn">
-              swedish_test_ssn (rust)
-            </a>
-          </h3>
-          <p>
-            a dotnet tool for getting a swedish test ssn from the wedish tax
-            agency (skatteverket).
-          </p>
-          <h3>
-            <a href="https://github.com/ferenyl/azuredevopstui">
-              azuredeviopstui
-            </a>
-          </h3>
-          <p>a tui for checking your work in azure devops</p>
-          <h3>
-            <a href="https://github.com/ferenyl/simplepackageinstaller">
-              simplepackageinstaller
-            </a>
-          </h3>
-          <p>tui for declarative installation of packages on arch</p>
-          <h3>
-            <a href="https://github.com/ferenyl/Teams.ThirdPartyAppApi">
-              Teams.ThirdPartyAppApi (.net)
-            </a>
-          </h3>
-          <p>
-            API integrations for Teams third-party apps. Controll teams from
-            code
-          </p>
-          <h3>
-            <a href="https://github.com/ferenyl/homeassistant_addons">
-              homeassistant_addons
-            </a>
-          </h3>
-          <p>Custom add-ons for Home Assistant</p>
-          <p id="icons">
+        <aside class="col-md-4 col-lg-3 sidebar d-flex flex-column align-items-center text-center p-4">
+          <img
+            src="./images/me.jpg"
+            alt="Ferenyl Avatar"
+            class="avatar rounded-circle mt-md-5 mb-3"
+          />
+          <h1>ferenyl.dev</h1>
+          <p class="tagline">Me backend developer. So me use bootstrap. And Arch btw!</p>
+          <p id="icons" class="my-3">
             <i class="nf nf-dev-dotnet" title="dotnet"></i>
             <i class="nf nf-dev-rust" title="rust"></i>
             <i class="nf nf-dev-linux" title="linux"></i>
@@ -102,13 +156,95 @@
             <i class="nf nf-md-api" title="api"></i>
             <i class="nf nf-custom-neovim" title="neovim"></i>
           </p>
-          <p>
+          <div class="contact mt-md-auto">
             <a href="https://github.com/ferenyl"
-              ><i class="nf nf-dev-github" title="github"></i> GitHub
+              ><i class="nf nf-dev-github"></i> GitHub</a
+            >
+            <a href="https://www.linkedin.com/in/ahlbackjohan/"
+              ><i class="nf nf-fa-linkedin"></i> LinkedIn</a
+            >
+            <a href="mailto:ferenyl@ferenyl.dev"
+              ><i class="nf nf-md-email"></i> ferenyl@ferenyl.dev</a
+            >
+          </div>
+        </aside>
+        <main class="col-md-8 col-lg-9 p-4 p-lg-5">
+          <h2 class="mb-4">projects</h2>
+          <ul class="projects">
+          <li>
+            <a class="project" href="https://github.com/ferenyl/SwedishTestSsn">
+              <span class="name">SwedishTestSsn</span><span class="lang lang-dotnet">.net</span>
+              <p>.NET tool (swetestssn) that fetches Swedish test personal identity numbers from Skatteverket's open API, with regex filtering and JSON output.</p>
             </a>
-          </p>
-          <p><a href="mailto:ferenyl@ferenyl.dev">ferenyl@ferenyl.dev</a></p>
-        </div>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/swedish_test_ssn">
+              <span class="name">swedish_test_ssn</span><span class="lang lang-rust">rust</span>
+              <p>Rust CLI that fetches Swedish test personal identity numbers from Skatteverket's open API, with regex filtering and JSON output.</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/azuredevopstui">
+              <span class="name">azuredevopstui</span><span class="lang lang-rust">rust</span>
+              <p>Terminal UI for Azure DevOps: your PRs, work items, reviews, sprint and pipelines in one keyboard-driven screen.</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/simplepackageinstaller">
+              <span class="name">simplepackageinstaller</span><span class="lang lang-rust">rust</span>
+              <p>TUI that sets up an Arch Linux machine from one YAML file: pacman, AUR, Flatpak, npm, cargo, uv, dotnet, services and scripts.</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/Teams.ThirdPartyAppApi">
+              <span class="name">Teams.ThirdPartyAppApi</span><span class="lang lang-dotnet">.net</span>
+              <p>.NET library for the Microsoft Teams third-party app API. Control Teams meetings from code, e.g. toggle mute.</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/LittleHelpers">
+              <span class="name">LittleHelpers</span><span class="lang lang-dotnet">.net</span>
+              <p>Family chore app where kids earn points towards their monthly allowance. .NET Aspire, ASP.NET Core and Angular.</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/homeassistant_addons">
+              <span class="name">homeassistant_addons</span>
+              <p>Home Assistant add-on repository. Includes Zensical, a documentation site generator for local folders and Git repos.</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/homeassistant-integration-goxlr-utility">
+              <span class="name">homeassistant-integration-goxlr-utility</span><span class="lang lang-python">python</span>
+              <p>Home Assistant integration (HACS) for GoXLR Utility: volume, mute, profiles, routing and lighting.</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/goxlrutil_api">
+              <span class="name">goxlrutil_api</span><span class="lang lang-python">python</span>
+              <p>Async Python library for the GoXLR Utility daemon over Unix socket, HTTP or WebSocket, with typed models and live state.</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/claudeplugins">
+              <span class="name">claudeplugins</span>
+              <p>Claude Code plugin marketplace with ferenyl-claude, whose drover skill orchestrates multiple Claude agents in Zellij.</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/droverstatus">
+              <span class="name">droverstatus</span><span class="lang lang-ts">typescript</span>
+              <p>Local web UI for drover: live view and control of Claude agents, tasks and messages.</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/ferenyl/zellij-claude">
+              <span class="name">zellij-claude</span><span class="lang lang-rust">rust</span>
+              <p>Zellij plugin that shows every running Claude Code session and whether it is working, waiting or idle.</p>
+            </a>
+          </li>
+          </ul>
+        </main>
       </div>
     </div>
   </body>
